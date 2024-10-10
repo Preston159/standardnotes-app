@@ -235,6 +235,8 @@ jobs:
 
       - name: Build
         run: yarn run electron-builder --windows --x64 --ia32 --publish=never --c.extraMetadata.version=$(node -p "require('./../web/package.json').version")
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
 
       - name: Upload
         uses: actions/upload-artifact@v3.0.0
