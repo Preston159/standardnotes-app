@@ -151,7 +151,7 @@ export class HeadlessSuperConverter implements SuperConverterServiceInterface {
                   paragraph.remove()
                 }
               }
-              content = $convertToMarkdownString(MarkdownTransformers)
+              content = $convertToMarkdownString(MarkdownTransformers).replaceAll('\\n', '<br>')
               resolve()
               break
             }
